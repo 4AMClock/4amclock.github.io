@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3D导航栏</title>
+    <style>
+        ul {
+            margin: 100px;
+        }
+        
+        ul li {
+            float: left;
+            margin-left: 10px;
+            width: 120px;
+            height: 40px;
+            list-style: none;
+            perspective: 500px;
+        }
+        
+        .box {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: all .4s;
+        }
+        
+        .box:hover {
+            transform: rotateX(90deg);
+        }
+        
+        .front,
+        .bottom {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 40px;
+        }
+        
+        .front {
+            background-color: pink;
+            z-index: 1;
+            transform: translateZ(20px);
+        }
+        
+        .bottom {
+            transform: translateY(20px) rotateX(-90deg);
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <div class="box">
+                <div class="front">点我</div>
+                <div class="bottom">嘿嘿</div>
+            </div>
+        </li>
+
+        <li>
+            <div class="box">
+                <div class="front">碰我</div>
+                <div class="bottom">你好</div>
+            </div>
+        </li>
+
+        <li>
+            <div class="box">
+                <div class="front">摸我</div>
+                <div class="bottom">恭喜中550万</div>
+            </div>
+        </li>
+
+        <li>
+            <div class="box">
+                <div class="front">来啦</div>
+                <div class="bottom">老弟</div>
+            </div>
+        </li>
+    </ul>
+</body>
+
+</html>
