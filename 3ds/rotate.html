@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
+    <title>旋转相册</title>
+    <style>
+        body {
+            perspective: 1600px;
+        }
+        
+        section {
+            position: relative;
+            width: 400px;
+            height: 267px;
+            margin: 150px auto 0;
+            transform-style: preserve-3d;
+            animation: rotate_phote 35s linear infinite;
+        }
+        
+        section:hover {
+            animation-play-state: paused;
+        }
+        
+        section div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        section div:nth-child(1) {
+            transform: translateZ(500px);
+            background: url(../upload/love2.jpeg);
+        }
+        
+        section div:nth-child(2) {
+            transform: rotateY(60deg) translateZ(500px);
+            background: url(../upload/love1.png);
+        }
+        
+        section div:nth-child(3) {
+            transform: rotateY(120deg) translateZ(500px);
+            background: url(../upload/love3.png);
+        }
+        
+        section div:nth-child(4) {
+            transform: rotateY(180deg) translateZ(500px);
+            background: url(../upload/love4.png);
+        }
+        
+        section div:nth-child(5) {
+            transform: rotateY(240deg) translateZ(500px);
+            background: url(../upload/love5.png);
+        }
+        
+        section div:nth-child(6) {
+            transform: rotateY(300deg) translateZ(500px);
+            background: url(../upload/love6.png);
+        }
+        
+        @keyframes rotate_phote {
+            from {}
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+</body>
+
+</html>
